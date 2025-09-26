@@ -37,7 +37,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <!-- 顧客管理カード -->
-              <div class="bg-white overflow-hidden shadow rounded-lg">
+              <div class="bg-white overflow-hidden shadow rounded-lg cursor-pointer hover:shadow-lg transition-shadow" @click="goToCustomers">
                 <div class="p-6">
                   <div class="flex items-center">
                     <div class="flex-shrink-0">
@@ -50,7 +50,7 @@
                         顧客管理
                       </dt>
                       <dd class="text-lg font-medium text-gray-900">
-                        準備中
+                        実装済み
                       </dd>
                     </div>
                   </div>
@@ -58,7 +58,7 @@
               </div>
 
               <!-- 製品管理カード -->
-              <div class="bg-white overflow-hidden shadow rounded-lg">
+              <div class="bg-white overflow-hidden shadow rounded-lg cursor-pointer hover:shadow-lg transition-shadow" @click="goToProducts">
                 <div class="p-6">
                   <div class="flex items-center">
                     <div class="flex-shrink-0">
@@ -71,7 +71,7 @@
                         製品管理
                       </dt>
                       <dd class="text-lg font-medium text-gray-900">
-                        準備中
+                        実装済み
                       </dd>
                     </div>
                   </div>
@@ -79,7 +79,7 @@
               </div>
 
               <!-- 店舗管理カード -->
-              <div class="bg-white overflow-hidden shadow rounded-lg">
+              <div class="bg-white overflow-hidden shadow rounded-lg cursor-pointer hover:shadow-lg transition-shadow" @click="goToStores">
                 <div class="p-6">
                   <div class="flex items-center">
                     <div class="flex-shrink-0">
@@ -92,7 +92,7 @@
                         店舗管理
                       </dt>
                       <dd class="text-lg font-medium text-gray-900">
-                        準備中
+                        実装済み
                       </dd>
                     </div>
                   </div>
@@ -137,6 +137,18 @@ const authStore = useAuthStore()
 const handleLogout = () => {
   authStore.logout()
   router.push('/login')
+}
+
+const goToCustomers = () => {
+  router.push('/customers')
+}
+
+const goToProducts = () => {
+  router.push('/products')
+}
+
+const goToStores = () => {
+  router.push('/stores')
 }
 </script>
 

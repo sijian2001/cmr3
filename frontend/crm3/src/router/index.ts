@@ -34,6 +34,42 @@ const router = createRouter({
       name: 'password-reset-confirm',
       component: () => import('@/views/auth/PasswordResetConfirm.vue'),
       meta: { requiresGuest: true }
+    },
+    {
+      path: '/customers',
+      name: 'customers',
+      component: () => import('@/views/customers/CustomerListView.vue'),
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/customers/:id',
+      name: 'customer-detail',
+      component: () => import('@/views/customers/CustomerDetailView.vue'),
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/products',
+      name: 'products',
+      component: () => import('@/views/products/ProductListView.vue'),
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/products/:id',
+      name: 'product-detail',
+      component: () => import('@/views/products/ProductDetailView.vue'),
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/stores',
+      name: 'stores',
+      component: () => import('@/views/stores/StoreList.vue'),
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/stores/:id',
+      name: 'store-detail',
+      component: () => import('@/views/stores/StoreDetail.vue'),
+      meta: { requiresAuth: true }
     }
   ]
 })
