@@ -14,6 +14,10 @@ func AutoMigrate(db *gorm.DB) error {
 
 	err := db.AutoMigrate(
 		&models.User{},
+		&models.Customer{},
+		&models.Product{},
+		&models.Store{},
+		&models.Staff{},
 	)
 
 	if err != nil {
@@ -31,6 +35,10 @@ func DropAllTables(db *gorm.DB) error {
 
 	err := db.Migrator().DropTable(
 		&models.User{},
+		&models.Customer{},
+		&models.Product{},
+		&models.Store{},
+		&models.Staff{},
 	)
 
 	if err != nil {
